@@ -25,7 +25,8 @@ const printCards = (container, cards) => {
     </figure>
     <section class="cards__figure__section">
     <div class="cards__figure__section__details">
-     <img data-card="${element.id}"name=src${element.id} src=${element.userImage} alt=${element.user}><h3 data-card="name" >${element.name}</h3>
+     <img data-card="${element.id}" src=${element.userImage} alt=${element.user}>
+     <h3  data-card="${element.id}" >${element.name}</h3>
      </div>
     <span  class="cards__figure__section__details__span">
     <h3 >${element.user}</h3>
@@ -51,7 +52,7 @@ document.addEventListener("click", (event) => {
   const dataCardAttribute = event.target.getAttribute("data-card");
   if (dataCardAttribute !== null) {
     const cardIndex = parseInt(dataCardAttribute, 10);
-    sessionStorage.setItem("selectedCardIndex", cardIndex);
+    sessionStorage.setItem("selectedCardIndex",JSON.stringify(cardIndex) );
     window.location.href = "../pages/details.html"
   }
   console.log(dataCardAttribute);
